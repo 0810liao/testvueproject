@@ -8,51 +8,53 @@
 </div>
 </template>
 <script>
-export default{
-    name:'TabControl',
-    props: {
-      titles: {
-        type: Array,
-        default() {
-          return []
-        }
-      },    
-    }, 
-    data(){
-          return {
-            currentIndex:0
-          }
+    export default {
+        name: 'TabControl',
+        props: {
+            titles: {
+                type: Array,
+                default () {
+                    return []
+                }
+            },
+        },
+        data() {
+            return {
+                currentIndex: 0
+            }
 
-      },
-    methods:{
-        itemClick(index){
-            this.currentIndex=index;
-            this.$emit('tabcontrolclick',index)
+        },
+        methods: {
+            itemClick(index) {
+                this.currentIndex = index;
+                this.$emit('tabcontrolclick', index)
+            }
         }
     }
-}
 </script>
 <style scoped>
-.tab-control{
-    text-align: center;
-    height: 40px;
-    display: flex;
-    line-height: 40px;
-    background-color: #fff;
-    font-size: 15px;
-}
-.tab-control-item{
-    flex:1;
-}
-.tab-control-item>span{
+    .tab-control {
+        text-align: center;
+        height: 40px;
+        display: flex;
+        line-height: 40px;
+        background-color: #fff;
+        font-size: 15px;
+    }
     
-    padding: 5px;
+    .tab-control-item {
+        flex: 1;
+    }
     
-}
-.active{
-    color: var(--color-high-text);
-}
-.active span {
-    border-bottom: 3px solid var(--color-tint);
-  }
+    .tab-control-item>span {
+        padding: 5px;
+    }
+    
+    .active {
+        color: var(--color-high-text);
+    }
+    
+    .active span {
+        border-bottom: 3px solid var(--color-tint);
+    }
 </style>

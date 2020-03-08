@@ -4,6 +4,7 @@ import Home from 'views/home/Home'
 import Category from 'views/category/Category'
 import Profile from 'views/profile/Profile'
 import Shopcat from 'views/cart/Cart'
+import Details from 'views/details/Details'
 Vue.use(VueRouter)
 const routes = [{
         path: '',
@@ -23,6 +24,10 @@ const routes = [{
     {
         path: '/profile',
         component: Profile
+    },
+    {
+        path: '/details/:iid',
+        component: Details
     },
 ]
 const router = new VueRouter({
